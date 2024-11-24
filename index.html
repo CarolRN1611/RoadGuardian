@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/pg.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <title>RoadGuardian - Rastreamento de Mercadorias</title>
+</head>
+
+<body>
+
+    <header>
+        <div class="container-fluid">
+            <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top w-100">
+                <a class="navbar-brand" href="#">
+                    <img src="images/Roadguardian (1).png" alt="Logo da empresa"
+                        style="max-width: 100px; height: auto;">
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas"
+                    data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar"
+                    aria-labelledby="offcanvasNavbarLabel">
+                    <div class="offcanvas-header">
+                        <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Menu</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                    </div>
+                    <div class="offcanvas-body">
+                        <ul class="navbar-nav justify-content-left flex-grow-1 pe-3">
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">Início</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#sobre-nos">Sobre Nós</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#features">Funcionalidades</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#benefits">Benefícios</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#contact">Contato</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <section class="carousel-container">
+        <div class="carousel">
+            <div class="carousel-slide active">
+                <video class="video" autoplay muted loop loading = "lazy">
+                    <source src="images/caminhão.mp4" type="video/mp4">
+                    Seu navegador não suporta a tag de vídeo.
+                </video>
+                <div class="overlay"></div>
+                <div class="caption-container">
+                    <h1 class="caption-carousel">Rastreamento de Mercadorias em Tempo Real</h1>
+                    <p>Monitore suas cargas de qualquer lugar.</p>
+                    <button class="cta-button" onclick="scrollToContact()">Saiba Mais</button>
+                </div>
+            </div>
+            <div class="carousel-slide">
+                <video class="video" autoplay muted loop loading = "lazy">
+                    <source src="images/entrega.mp4" type="video/mp4">
+                    Seu navegador não suporta a tag de vídeo.
+                </video>
+                <div class="caption-container">
+                    <h1 class="caption-carousel">Entregas Rápidas e Seguras</h1>
+                    <p>Acompanhe o status da sua entrega em tempo real.</p>
+                    <button class="cta-button" onclick="scrollToContact()">Saiba Mais</button>
+                </div>
+            </div>
+
+        </div>
+        <button class="carousel-control prev" onclick="prevSlide()">&#10094;</button>
+        <button class="carousel-control next" onclick="nextSlide()">&#10095;</button>
+    </section>
+
+    <main>
+        <section id="sobre-nos" class="sobre-nos">
+            <div class="container">
+                <div class="sobre-nos__content row">
+                    <div class="sobre-nos__text-wrapper col-md-6">
+                        <h2 class="sobre-nos__title">Sobre Nós</h2>
+                        <p class="sobre-nos__subtitle"></p>
+                        <p>O Road Guardian é uma solução inovadora que transforma a forma como monitoramos cargas e
+                            garantimos a segurança dos motoristas em suas atividades diárias. Posicionando-se como uma
+                            ferramenta essencial no setor de logística, o Road Guardian combina tecnologias avançadas
+                            com uma abordagem focada em otimização, eficiência e no bem-estar dos motoristas.</p>
+                        <p>Um dos seus principais diferenciais é a capacidade de revolucionar o setor ao incorporar uma
+                            funcionalidade exclusiva: o monitoramento por peso. Além de rastrear a localização física da
+                            carga em tempo real, o aplicativo também verifica alterações no peso durante o transporte.
+                            Essa funcionalidade adicional não apenas aumenta a segurança operacional, mas também previne
+                            violações indevidas da carga, proporcionando maior controle e confiança em toda a cadeia
+                            logística.</p>
+                        <p>Com o Road Guardian, empresas podem alcançar novos patamares de eficiência, segurança e
+                            inovação, redefinindo os padrões do mercado logístico.</p>
+                        <button class="cta-button" onclick="scrollToContact()">Saiba Mais</button>
+                    </div>
+                    <div class="sobre-nos__img-wrapper col-md-6">
+                        <img src="images/Roadguardian (1).png" alt="Nossa Ambição" class="sobre-nos__img"
+                            decoding="async" loading="lazy">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="features" class="features">
+            <div class="container">
+                <h2 style="color: white;">Funcionalidades do Aplicativo</h2>
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="feature">
+                            <i class="fa-solid fa-map-location-dot icons"></i>
+                            <h3>Rastreamento em Tempo Real</h3>
+                            <p>Monitore a localização das suas cargas em tempo real, garantindo visibilidade total sobre
+                                o transporte.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="feature">
+                            <i class="fa-solid fa-lock icons"></i>
+                            <h3>Bloqueio de Carga</h3>
+                            <p>Implemente segurança robusta com um sistema de bloqueio instantâneo, reduzindo riscos de
+                                roubo.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="feature">
+                            <i class="fa-solid fa-bell icons"></i>
+                            <h3>Alertas em Tempo Real</h3>
+                            <p>Receba notificações instantâneas sobre eventos críticos, como desvios de rota ou paradas
+                                não programadas.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="feature">
+                            <i class="fa-solid fa-clock icons"></i>
+                            <h3>Histórico de Rastreio</h3>
+                            <p>Acesse o histórico completo de movimentação das mercadorias, permitindo análises
+                                detalhadas e relatórios.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="feature">
+                            <i class="fa-solid fa-truck icons"></i>
+                            <h3>Previsão de Entrega</h3>
+                            <p>Receba estimativas precisas de tempo de chegada, baseadas em dados de tráfego, clima e
+                                rotas otimizadas.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="feature">
+                            <i class="fa-solid fa-mobile icons"></i>
+                            <h3>Acesso Móvel</h3>
+                            <p>Controle total na palma da sua mão com nosso aplicativo móvel, permitindo monitoramento a
+                                qualquer momento.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="feature">
+                            <i class="fa-solid fa-eye icons"></i>
+                            <h3>Monitoramento de Fadiga</h3>
+                            <p>Identifique sinais de cansaço do motorista em tempo real por meio de câmeras inteligentes
+                                e alertas automáticos.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="feature">
+                            <i class="fa-solid fa-weight-hanging icons"></i>
+                            <h3>Rastreamento por Peso</h3>
+                            <p>Monitore alterações no peso da carga durante o transporte, prevenindo violações e
+                                garantindo segurança adicional.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="feature">
+                            <i class="fa-solid fa-route icons"></i>
+                            <h3>Rotas Otimizadas com Waze</h3>
+                            <p>Utilize integração com o Waze para calcular rotas otimizadas, considerando o tráfego em
+                                tempo real e condições da estrada.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <section id="benefits" class="benefits">
+            <div class="container">
+                <h2>Benefícios do RoadGuardian</h2>
+                <div class="benefits-grid">
+                    <div class="benefit-card">
+                        <div class="benefit-icon"><i class="fa-solid fa-dollar-sign"></i></div>
+                        <h3>Redução de Custos</h3>
+                        <p>Menos perdas e danos, resultando em economia significativa.</p>
+                    </div>
+                    <div class="benefit-card">
+                        <div class="benefit-icon"><i class="fa-solid fa-arrow-up-right-dots"></i></div>
+                        <h3>Eficiência Aprimorada</h3>
+                        <p>Melhoria nas rotas e processos, otimizando o tempo de entrega.</p>
+                    </div>
+                    <div class="benefit-card">
+                        <div class="benefit-icon"><i class="fa-solid fa-shield-alt"></i></div>
+                        <h3>Segurança Aumentada</h3>
+                        <p>Proteção contra roubos, aumentando a confiança dos clientes.</p>
+                    </div>
+                    <div class="benefit-card">
+                        <div class="benefit-icon"><i class="fa-solid fa-laptop"></i></div>
+                        <h3>Interface Intuitiva</h3>
+                        <p>Fácil de usar e navegar, garantindo uma rápida adoção pelos funcionários.</p>
+                    </div>
+                    <div class="benefit-card">
+                        <div class="benefit-icon"><i class="fa-solid fa-satellite-dish"></i></div>
+                        <h3>Rastreamento em Tempo Real</h3>
+                        <p>Monitore suas mercadorias em qualquer lugar, melhorando a transparência.</p>
+                    </div>
+                    <div class="benefit-card">
+                        <div class="benefit-icon"><i class="fa-solid fa-chart-line"></i></div>
+                        <h3>Relatórios Detalhados</h3>
+                        <p>Acompanhe o desempenho e a segurança das entregas com análises precisas.</p>
+                    </div>
+                    <div class="benefit-card">
+                        <div class="benefit-icon"><i class="fa-solid fa-calendar-check"></i></div>
+                        <h3>Planejamento Eficiente</h3>
+                        <p>Utilize dados históricos para prever demandas e otimizar operações.</p>
+                    </div>
+                    <div class="benefit-card">
+                        <div class="benefit-icon"><i class="fa-solid fa-thumbs-up"></i></div>
+                        <h3>Aumento da Satisfação do Cliente</h3>
+                        <p>Ofereça atualizações em tempo real, aumentando a confiança e a fidelidade.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="contact">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6">
+                        <h2>Seja Nosso Cliente!</h2>
+                        <p>Preencha o formulário para saber mais sobre nossos serviços!</p>
+                    </div>
+                    <div class="col-md-6">
+                        <form id="contact-form">
+                            <div class="form-group">
+                                <input type="text" placeholder="Seu Nome" required class="form-control">
+                            </div>
+                            <div class="form-group">
+                                <input type="email" placeholder="Seu Email" required class="form-control">
+                            </div>
+                            <div class="form-group">
+                                <input type="text" placeholder="Nome da Empresa" required class="form-control">
+                            </div>
+                            <div class="form-group">
+                                <textarea placeholder="Sua Mensagem" required class="form-control"></textarea>
+                            </div>
+                            <div>
+                                <button type="submit" class="cta-button">Enviar</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <div class="footer-wrapper">
+        <footer class="footer-content">
+            <div class="footer-brand">
+                <h2>RoadGuardian</h2>
+                <p>Protegendo sua jornada.</p>
+            </div>
+            <ul class="footer-nav">
+                <li class="footer-nav-item"><a href="#" class="footer-nav-link">Início</a></li>
+                <li class="footer-nav-item"><a href="#sobre-nos" class="footer-nav-link">Sobre Nós</a></li>
+                <li class="footer-nav-item"><a href="#features" class="footer-nav-link">Funcionalidades</a></li>
+                <li class="footer-nav-item"><a href="#benefits" class="footer-nav-link">Benefícios</a></li>
+                <li class="footer-nav-item"><a href="#contact" class="footer-nav-link">Contato</a></li>
+            </ul>
+            <div class="footer-social">
+                <a href="#" class="social-icon"><i class="fa-brands fa-facebook"></i></a>
+                <a href="#" class="social-icon"><i class="fa-brands fa-twitter"></i></a>
+                <a href="#" class="social-icon"><i class="fa-brands fa-whatsapp"></i></a>
+                <a href="#" class="social-icon"><i class="fa-brands fa-instagram"></i></a>
+            </div>
+            <p class="footer-text">&copy; 2024 RoadGuardian. Todos os direitos reservados.</p>
+        </footer>
+    </div>
+
+    <script>
+        window.addEventListener('scroll', function () {
+            const nav = document.querySelector('header');
+            if (window.scrollY > 50) {
+                nav.classList.add('scrolled');
+            } else {
+                nav.classList.remove('scrolled');
+            }
+        });
+    </script>
+
+    <script>
+        let currentSlide = 0;
+
+        function showSlide(index) {
+            const slides = document.querySelectorAll('.carousel-slide');
+            if (index >= slides.length) {
+                currentSlide = 0;
+            } else if (index < 0) {
+                currentSlide = slides.length - 1;
+            } else {
+                currentSlide = index;
+            }
+
+            const offset = -currentSlide * 100;
+            document.querySelector('.carousel').style.transform = `translateX(${offset}%)`;
+        }
+
+        function nextSlide() {
+            showSlide(currentSlide + 1);
+        }
+
+        function prevSlide() {
+            showSlide(currentSlide - 1);
+        }
+
+        function scrollToContact() {
+            document.getElementById('contact').scrollIntoView({ behavior: 'smooth' });
+        }
+
+        document.getElementById('contact-form').onsubmit = function (e) {
+            e.preventDefault();
+            Swal.fire({
+                title: "Sucesso!",
+                text: "Mensagem enviada com sucesso.",
+                icon: "success",
+                width: '90%',  
+                padding: '2em', 
+                customClass: {
+                    popup: 'popup-responsivo',
+                    title: 'title-responsivo',
+                    content: 'content-responsivo'  
+                },
+                confirmButtonText: "OK",
+                confirmButtonColor: "#3085d6",
+                timerProgressBar: true
+            });
+
+            this.reset();
+        };
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</body>
+
+</html>
