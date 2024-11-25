@@ -3,6 +3,11 @@ html {
     scroll-behavior: smooth;
   }
 @media (max-width: 400px) {
+
+   .carousel-container {
+    max-width: 100%;
+    overflow-x: hidden;
+   }
   
     .caption-container {
     margin-bottom: 15px;
