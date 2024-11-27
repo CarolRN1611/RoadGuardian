@@ -321,33 +321,33 @@
         document.addEventListener("DOMContentLoaded", function () {
             const offcanvasElement = document.querySelector("#offcanvasNavbar");
             const offcanvasLinks = document.querySelectorAll(".nav-link");
-            const footerLinks = document.querySelectorAll(".footer-nav-link"); 
+            const footerLinks = document.querySelectorAll(".footer-nav-link");
             const offcanvasInstance = new bootstrap.Offcanvas(offcanvasElement);
 
-            
+
             function getNavHeight() {
                 const nav = document.querySelector("header");
-                return nav.offsetHeight; 
+                return nav.offsetHeight;
             }
 
             function scrollToSection(link) {
-                const targetId = link.getAttribute("href").substring(1); 
+                const targetId = link.getAttribute("href").substring(1);
                 const targetElement = document.getElementById(targetId);
 
                 if (targetElement) {
-                    const navHeight = getNavHeight(); 
+                    const navHeight = getNavHeight();
                     const targetPosition = targetElement.offsetTop - navHeight - 80;
                     window.scrollTo({
                         top: targetPosition,
                         behavior: "smooth"
                     });
                 }
-            }          
+            }
             offcanvasLinks.forEach(link => {
                 link.addEventListener("click", function (event) {
-                    event.preventDefault(); 
+                    event.preventDefault();
                     scrollToSection(link);
-                    offcanvasInstance.hide(); 
+                    offcanvasInstance.hide();
                 });
             });
             footerLinks.forEach(link => {
@@ -357,6 +357,34 @@
                 });
             });
         })
+    </script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const carousel = document.querySelector(".carousel");
+            const slides = document.querySelectorAll(".carousel-slide");
+
+            carousel.addEventListener("slide.bs.carousel", function (event) {
+                slides.forEach((slide) => {
+                    const caption = slide.querySelector(".caption-container");
+                    if (caption) {
+                        // Remove a animação antes de mudar
+                        caption.style.animation = "none";
+                    }
+                });
+
+                // Use setTimeout para garantir que a animação seja aplicada após a troca de slide
+                setTimeout(() => {
+                    const activeSlide = slides[event.to];
+                    const activeCaption = activeSlide.querySelector(".caption-container");
+                    if (activeCaption) {
+                        // Aplica a animação de fade-in quando o slide é ativado
+                        activeCaption.style.animation = "fadeInMove 2s ease-in-out";
+                    }
+                }, 50); // Leve delay para garantir que o slide foi trocado
+            });
+        });
+
+
     </script>
 
     <script>
@@ -375,6 +403,8 @@
 
         function showSlide(index) {
             const slides = document.querySelectorAll('.carousel-slide');
+            const captions = document.querySelectorAll('.caption-container'); // Selecionando os captions
+
             if (index >= slides.length) {
                 currentSlide = 0;
             } else if (index < 0) {
@@ -383,6 +413,20 @@
                 currentSlide = index;
             }
 
+            // Remover animação dos slides anteriores
+            captions.forEach(caption => {
+                caption.style.animation = 'none';
+            });
+
+            // Aplicar animação ao novo slide ativo
+            const activeSlide = slides[currentSlide];
+            const activeCaption = activeSlide.querySelector('.caption-container');
+
+            if (activeCaption) {
+                activeCaption.style.animation = 'fadeInMove 2s ease-in-out';
+            }
+
+            // Controlar a posição do slide
             const offset = -currentSlide * 100;
             document.querySelector('.carousel').style.transform = `translateX(${offset}%)`;
         }
@@ -419,6 +463,11 @@
 
             this.reset();
         };
+
+        window.onload = function () {
+            showSlide(0);
+        };
+
     </script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
